@@ -1,10 +1,13 @@
-import React from 'react';
-import {View, SafeAreaView, Image, Text, StyleSheet} from 'react-native';
+import React,{useState} from 'react';
+import {View, SafeAreaView, Image, Text, StyleSheet,TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../assets/Color';
+import {Entypo,MaterialCommunityIcons} from "@expo/vector-icons"
 
 const DetailsScreen = ({navigation, route}) => {
   const items = route.params;
+const [count,setCount]=useState(1)
+  
 
   return (
     <SafeAreaView
@@ -72,20 +75,20 @@ const DetailsScreen = ({navigation, route}) => {
                 flexDirection: 'row',
                 alignItems: 'center',
               }}>
-              <View style={style.borderBtn}>
-                <Text style={style.borderBtnText}>-</Text>
-              </View>
+              <TouchableOpacity style={style.borderBtn} onPress={()=>setCount((prevCount)=>prevCount-1)}>
+                <Entypo name="minus" size={24} color="black"/>
+              </TouchableOpacity>
               <Text
                 style={{
                   fontSize: 20,
                   marginHorizontal: 10,
                   fontWeight: 'bold',
                 }}>
-                1
+                {count}
               </Text>
-              <View style={style.borderBtn}>
-                <Text style={style.borderBtnText}>+</Text>
-              </View>
+              <TouchableOpacity style={style.borderBtn} onPress={()=>setCount((prevCount)=>prevCount+1)}>
+              <MaterialCommunityIcons name="plus" size={24} color="black" />
+              </TouchableOpacity>
             </View>
 
             <View style={style.buyBtn}>

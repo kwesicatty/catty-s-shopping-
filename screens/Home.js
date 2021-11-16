@@ -11,6 +11,7 @@ import {
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from "../assets/Color";
+import Footer from "../footer"
 import {SneakersItems} from '../assets/itemsData';
 const width = Dimensions.get('window').width / 2 - 30;
 
@@ -140,6 +141,7 @@ const HomeScreen = ({navigation}) => {
           return <Cards items={item} />;
         }}
       />
+      <Footer/>
     </SafeAreaView>
   );
 };
