@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import {View, SafeAreaView, Image, Text, StyleSheet,TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Footer from "../footer"
 import COLORS from '../assets/Color';
 import {Entypo,MaterialCommunityIcons} from "@expo/vector-icons"
 
@@ -100,6 +101,7 @@ const [count,setCount]=useState(1)
           </View>
         </View>
       </View>
+      <Footer/>
     </SafeAreaView>
   );
 };
